@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\BanksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\BankContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -165,7 +166,9 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Bank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AccountBankRepository.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\BanksRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\BankDatabase.mdf" />
@@ -213,6 +216,11 @@
     <Content Include="Views\Accounts\Details.cshtml" />
     <Content Include="Views\Accounts\Edit.cshtml" />
     <Content Include="Views\Accounts\Index.cshtml" />
+    <Content Include="Views\Banks\Create.cshtml" />
+    <Content Include="Views\Banks\Delete.cshtml" />
+    <Content Include="Views\Banks\Details.cshtml" />
+    <Content Include="Views\Banks\Edit.cshtml" />
+    <Content Include="Views\Banks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706220846196_Initial.resx">
