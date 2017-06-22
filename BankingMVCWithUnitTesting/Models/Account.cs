@@ -25,6 +25,7 @@ namespace BankingMVCWithUnitTesting.Models
         public string SSN { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
@@ -35,6 +36,7 @@ namespace BankingMVCWithUnitTesting.Models
         public string Address { get; set; }
 
         [Required]
+        [DataType(DataType.Currency)]
         public double Balance { get; set; }
 
         [ForeignKey("Bank")]

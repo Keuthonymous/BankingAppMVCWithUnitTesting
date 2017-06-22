@@ -19,6 +19,7 @@ namespace BankingMVCWithUnitTesting.Models
         public string Address { get; set; }
 
         [Required]
+        [DataType(DataType.Currency)]
         public double BankCapital { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }

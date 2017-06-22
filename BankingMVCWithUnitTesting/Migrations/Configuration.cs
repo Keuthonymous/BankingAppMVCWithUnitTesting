@@ -34,6 +34,11 @@ namespace BankingMVCWithUnitTesting.Migrations
                 new Account { AccountHolderFName = "Tarek", AccountHolderLName = "Bouzo", Address = "A Place Somewhere else", SSN = "125-12-1234", Email = "Something@anotherthing.com", PhoneNumber = 0705550129 }
                 );
 
+            context.Banks.AddOrUpdate(
+                b => b.ID,
+                new Bank { BankName ="Great Southern", BankCapital=1000000.00}
+                )
+
         }
     }
 }

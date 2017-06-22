@@ -12,5 +12,6 @@ namespace BankingMVCWithUnitTesting.DataAccess
         public BankContext() : base("DefaultConnection") { }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Bank> Banks { get; set; }
     }
 }
