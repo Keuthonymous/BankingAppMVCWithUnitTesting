@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -32,5 +33,12 @@ namespace BankingMVCWithUnitTesting.Models
 
         [Required]
         public string Address { get; set; }
+
+        [Required]
+        public double Balance { get; set; }
+
+        [ForeignKey("Bank")]
+        public int BankID { get; set; }
+        public virtual Bank Bank { get; set; }
     }
 }
