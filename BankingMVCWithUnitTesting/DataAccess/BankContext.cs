@@ -13,5 +13,7 @@ namespace BankingMVCWithUnitTesting.DataAccess
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Bank> Banks { get; set; }
+
+        public System.Data.Entity.DbSet<BankingMVCWithUnitTesting.Models.Trans> Trans { get; set; }
     }
 }

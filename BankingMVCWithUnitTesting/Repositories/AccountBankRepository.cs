@@ -91,5 +91,27 @@ namespace BankingMVCWithUnitTesting.Repositories
                         select a;
             return query;
         }
+
+        public void Deposit(Account account, double amount)
+        {
+            account.Balance = account.Balance + amount;
+            account.Transactions.Add(new Trans { Type =Trans.EventType.Deposit, Amount = amount });
+            db.SaveChanges();
+        }
+
+        public void WithDraw(int? bankID, int? accID, double amount)
+        {
+            Bank b = db.Banks.Find(bankID);
+
+            Account a = (from x in b.Accounts
+                         where x.ID == accID
+                         select x).FirstOrDefault();
+            if (amount < a.Balance)
+            {
+                a.Balance = a.Balance - amount;
+                a.Transactions.Add(new Trans { Type = Trans.EventType.WithDrawl, Amount = amount });
+                db.SaveChanges();
+            }
+        }
     }
 }

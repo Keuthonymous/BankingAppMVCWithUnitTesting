@@ -42,5 +42,7 @@ namespace BankingMVCWithUnitTesting.Models
         [ForeignKey("Bank")]
         public int BankID { get; set; }
         public virtual Bank Bank { get; set; }
+
+        public virtual ICollection<Trans> Transactions { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Web;
 
 namespace BankingMVCWithUnitTesting.Repositories
 {
-    public class AccountRepository :IDisposable
+    public class AccountRepository : IDisposable
     {
         private BankContext db = new BankContext();
 
@@ -28,11 +28,8 @@ namespace BankingMVCWithUnitTesting.Repositories
 
         public void Delete(Account account)
         {
-            if (db.Accounts.Contains(account))
-            {
-                db.Accounts.Remove(account);
-                db.SaveChanges();
-            }
+            db.Accounts.Remove(account);
+            db.SaveChanges();
         }
 
         public void Edit(Account account)
@@ -47,8 +44,8 @@ namespace BankingMVCWithUnitTesting.Repositories
         public Account GetById(int? id)
         {
             var query = (from a in db.Accounts
-                        where a.ID == id
-                        select a).FirstOrDefault();
+                         where a.ID == id
+                         select a).FirstOrDefault();
 
             return query;
         }

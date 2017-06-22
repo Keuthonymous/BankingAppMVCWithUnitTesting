@@ -57,10 +57,20 @@
         <dd>
             @Html.DisplayFor(model => model.Address)
         </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("View History", "ViewTransHistory", "AccountBank", new { id = Model.ID}, null) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Deposit", "Deposit", "AccountBank", new { id = Model.ID}, null) |
+    @Html.ActionLink("Withdraw", "Withdraw", "AccountBank", new { id = Model.ID }, null)
 </p>

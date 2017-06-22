@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountBankController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BanksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -154,17 +155,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706220846196_Initial.cs" />
-    <Compile Include="Migrations\201706220846196_Initial.Designer.cs">
-      <DependentUpon>201706220846196_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706221214315_AddedTrans.cs" />
+    <Compile Include="Migrations\201706221214315_AddedTrans.Designer.cs">
+      <DependentUpon>201706221214315_AddedTrans.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706220924398_AddedBanks.cs" />
-    <Compile Include="Migrations\201706220924398_AddedBanks.Designer.cs">
-      <DependentUpon>201706220924398_AddedBanks.cs</DependentUpon>
+    <Compile Include="Migrations\201706221257348_ChangedTransTable.cs" />
+    <Compile Include="Migrations\201706221257348_ChangedTransTable.Designer.cs">
+      <DependentUpon>201706221257348_ChangedTransTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706221303150_ChangedTransTableAgain.cs" />
+    <Compile Include="Migrations\201706221303150_ChangedTransTableAgain.Designer.cs">
+      <DependentUpon>201706221303150_ChangedTransTableAgain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Bank.cs" />
+    <Compile Include="Models\Trans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountBankRepository.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -221,14 +227,12 @@
     <Content Include="Views\Banks\Details.cshtml" />
     <Content Include="Views\Banks\Edit.cshtml" />
     <Content Include="Views\Banks\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706220846196_Initial.resx">
-      <DependentUpon>201706220846196_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706220924398_AddedBanks.resx">
-      <DependentUpon>201706220924398_AddedBanks.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Accounts\TransHistory.cshtml" />
+    <Content Include="Views\AccountBank\Index.cshtml" />
+    <Content Include="Views\AccountBank\Details.cshtml" />
+    <Content Include="Views\AccountBank\ViewAccounts.cshtml" />
+    <Content Include="Views\AccountBank\ViewTransHistory.cshtml" />
+    <Content Include="Views\AccountBank\Deposit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -245,6 +249,18 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706221214315_AddedTrans.resx">
+      <DependentUpon>201706221214315_AddedTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706221257348_ChangedTransTable.resx">
+      <DependentUpon>201706221257348_ChangedTransTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706221303150_ChangedTransTableAgain.resx">
+      <DependentUpon>201706221303150_ChangedTransTableAgain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

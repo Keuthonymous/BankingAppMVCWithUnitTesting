@@ -7,13 +7,13 @@ namespace BankingMVCWithUnitTesting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedBanks : IMigrationMetadata
+    public sealed partial class ChangedTransTableAgain : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedBanks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedTransTableAgain));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706220924398_AddedBanks"; }
+            get { return "201706221303150_ChangedTransTableAgain"; }
         }
         
         string IMigrationMetadata.Source

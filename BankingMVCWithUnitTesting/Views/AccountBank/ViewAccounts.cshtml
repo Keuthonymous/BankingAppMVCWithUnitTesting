@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BankingMVCWithUnitTesting.Models.Account>
+
+@{
+    ViewBag.Title = "ViewAccounts";
+}
+
+<h2>ViewAccounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank.BankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountHolderFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountHolderLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank.BankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountHolderFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountHolderLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", "Accounts", new { id=item.ID }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
