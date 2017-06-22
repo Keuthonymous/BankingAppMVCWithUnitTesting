@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201706220846196_Initial.Designer.cs">
       <DependentUpon>201706220846196_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706220924398_AddedBanks.cs" />
+    <Compile Include="Migrations\201706220924398_AddedBanks.Designer.cs">
+      <DependentUpon>201706220924398_AddedBanks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Bank.cs" />
@@ -213,6 +217,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706220846196_Initial.resx">
       <DependentUpon>201706220846196_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706220924398_AddedBanks.resx">
+      <DependentUpon>201706220924398_AddedBanks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

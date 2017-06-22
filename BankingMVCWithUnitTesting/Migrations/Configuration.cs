@@ -36,8 +36,8 @@ namespace BankingMVCWithUnitTesting.Migrations
 
             context.Banks.AddOrUpdate(
                 b => b.ID,
-                new Bank { BankName ="Great Southern", BankCapital=1000000.00}
-                )
+                new Bank { BankName = "Great Southern", BankCapital = 1000000.00, Address = "Somewhere" }
+                );
 
         }
     }
