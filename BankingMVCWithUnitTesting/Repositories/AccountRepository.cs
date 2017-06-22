@@ -8,7 +8,7 @@ using System.Web;
 
 namespace BankingMVCWithUnitTesting.Repositories
 {
-    public class AccountRepository
+    public class AccountRepository :IDisposable
     {
         private BankContext db = new BankContext();
 
@@ -44,7 +44,7 @@ namespace BankingMVCWithUnitTesting.Repositories
             }
         }
 
-        public Account GetById(int id)
+        public Account GetById(int? id)
         {
             var query = (from a in db.Accounts
                         where a.ID == id
@@ -66,7 +66,6 @@ namespace BankingMVCWithUnitTesting.Repositories
             var query = from a in db.Accounts
                         where a.AccountHolderLName == Lname
                         select a;
-
             return query;
         }
 
@@ -93,5 +92,29 @@ namespace BankingMVCWithUnitTesting.Repositories
                          select a).FirstOrDefault();
             return query;
         }
+
+        #region IDisposable Support
+
+        private bool disposedValue = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    db.Dispose();
+                }
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }
